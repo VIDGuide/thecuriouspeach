@@ -29,7 +29,6 @@
     </asp:ContentPlaceHolder>
 </head>
 <body id="page-top">
-    <form id="form1" runat="server">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid" style="background-color: black;">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -68,7 +67,6 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-    </form>
     <script src="Scripts/jquery.easing.min.js"></script>
     <script src="Scripts/jquery.fittext.js"></script>
     <script src="Scripts/wow.min.js"></script>

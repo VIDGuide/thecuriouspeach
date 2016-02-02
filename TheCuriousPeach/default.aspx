@@ -149,55 +149,62 @@
                     <p>Ready to sign up? Fill in the fields below and start recording!</p>
                 </div>
             </div>
-            <div class="form-group" style="margin-top:25px;">
-                <div class="row">
-                    <div class="col-sm-3 col-sm-offset-2">
-                        <label class="control-label" for="newUsername">Username:</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <input placeholder="Username" title="Enter a username" required="required" id="newUsername" class="form-control" style="margin-top:10px;" />
-                    </div>
-                    <div class="col-sm-3 col-sm-offset-2">
-                        <label class="control-label" for="Password1">Password:</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <input placeholder="Password"  title="Enter a password"  required="required" id="Password1" type="password" class="form-control" style="margin-top:10px;" />
-                    </div>
-                    <div class="col-sm-3 col-sm-offset-2">
-                        <label class="control-label" for="Password2">Verify Password:</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <input placeholder="Password" title="Enter your password again"  required="required" id="Password2" type="password" class="form-control" style="margin-top:10px;" />
-                    </div>
-                    <div class="col-sm-3 col-sm-offset-2">
-                        <label class="control-label" for="Email">Email address:</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <input placeholder="Email address" title="Enter your email address"  required="required" id="Email" type="email" class="form-control" style="margin-top:10px;"/>
-                    </div>
-                    <div class="col-sm-3 col-sm-offset-2">
-                        <label class="control-label" for="Gender">Gender:</label>
-                    </div>
-                    <div class="col-sm-6" style="text-align:center;">
-                        <input title="You must select a gender"  required="required" style="margin-top:10px;" type="radio" id="GenderM" name="Gender" value="M" /> Male
-                        <input title="You must select a gender"  required="required" type="radio" id="GenderF" name="Gender" value="F" style="margin-top:10px;margin-left:50px;" /> Female
-                    </div>
-                </div>
+            <form action="default.aspx#contact" method="post">
+                <div class="form-group" style="margin-top: 25px;">
+                    <div class="row">
+                        <div id="ResultBox" runat="server"></div>
+                        <div class="col-sm-3 col-sm-offset-2">
+                            <label class="control-label" for="Email">Email address:</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input placeholder="Email address" title="Enter your email address" required="required" name="Email" id="Email" type="email" class="form-control" style="margin-top: 10px;" />
+                        </div>
+                        <div class="col-sm-3 col-sm-offset-2">
+                            <label class="control-label" for="Password1">Password:</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input placeholder="Password" title="Enter a password" required="required" name="Password1" id="Password1" type="password" class="form-control" style="margin-top: 10px;" />
+                        </div>
+                        <div class="col-sm-3 col-sm-offset-2">
+                            <label class="control-label" for="Password2">Verify Password:</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input placeholder="Password" title="Enter your password again" required="required" name="Password2" id="Password2" type="password" class="form-control" style="margin-top: 10px;" />
+                        </div>
 
-                <div class="row">
-                    <div class="col-sm-9 col-sm-offset-2">
-                        <p style="margin-top: 25px;">
-                            <small>We only collect email addresses for the purposes of password recovery. We will not email you in any other context. The details you provide are not used to identify you in any way, nor shared with any other 3rd parties.
-                            </small>
-                        </p>
+                        <div class="col-sm-3 col-sm-offset-2">
+                            <label class="control-label" for="Gender">Gender:</label>
+                        </div>
+                        <div class="col-sm-6" style="text-align: center;">
+                            <input title="You must select a gender" required="required" style="margin-top: 10px;" type="radio" id="GenderM" name="Gender" value="M" />
+                            Male
+                        <input title="You must select a gender" required="required" type="radio" id="GenderF" name="Gender" value="F" style="margin-top: 10px; margin-left: 50px;" />
+                            Female
+                        </div>
+                        <div class="col-sm-3 col-sm-offset-2">
+                            <label class="control-label" for="Email">Date of Birth:</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input title="Enter your date of birth" required="required" id="DOB" name="DOB" type="date" class="form-control" style="margin-top: 10px;" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-9 col-sm-offset-2">
+                            <p style="margin-top: 25px;">
+                                <small>We only collect email addresses for the purposes of password recovery. We will not email you in any other context. The details you provide are not used to identify you in any way, nor shared with any other 3rd parties.
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <button style="margin: 20px;" class="btn btn-default btn-xl wow tada pull-right" type="submit">Sign Up</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-6 col-sm-offset-2">
-                        <button style="margin: 20px;" class="btn btn-default btn-xl wow tada pull-right" type="submit">Sign Up</button>
-                    </div>
-                </div>
-            </div>
+            </form>
+        </div>
     </section>
 
 </asp:Content>

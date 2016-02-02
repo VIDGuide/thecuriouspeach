@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Site1
+Partial Public Class Site2
     
     '''<summary>
     '''head control.
@@ -21,6 +21,15 @@ Partial Public Class Site1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    
+    '''<summary>
+    '''form1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
     '''ContentPlaceHolder1 control.
