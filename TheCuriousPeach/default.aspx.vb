@@ -8,13 +8,39 @@ Public Class _default
         'todo: add logon modal/popup/redirect
         If Not Request("LogonEmail") Is Nothing Then LogonUser()
         If Not Request("Password1") Is Nothing Then Register()
+
+        Dim OCount As Long = 0
+
+        Using conn As New SqlConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings("DB").ConnectionString.ToString),
+                   cmd As New SqlCommand("OCount", conn)
+            cmd.CommandType = Data.CommandType.StoredProcedure
+
+            Try
+                conn.Open()
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+                    If reader.HasRows Then
+                        reader.Read()
+                        OCount = CInt(reader("CNT"))
+                    End If
+                End Using
+            Catch ex As Exception
+            End Try
+        End Using
+
+        orgCount.InnerText = OCount.ToString
     End Sub
 
 
     Private Sub LogonUser()
         If Request("LogonEmail").ToString <> "" And Request("LogonPassword").ToString <> "" Then
             If ValidateUser(Request("LogonEmail").ToString, Request("LogonPassword").ToString) Then
-                FormsAuthentication.SetAuthCookie(Request("LogonEmail").ToString, CBool(Request("Persist")))
+                Dim Persist As Boolean = False
+                If Not IsNothing(Request("Persist")) Then
+                    If Request("Persist").ToString = "1" Then
+                        Persist = True
+                    End If
+                End If
+                FormsAuthentication.SetAuthCookie(Request("LogonEmail").ToString, Persist)
                 Response.Redirect("peach/default.aspx")
             Else
                 Response.Redirect("default.aspx", True)

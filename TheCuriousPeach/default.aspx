@@ -23,6 +23,8 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Statistics, graphs and analytics!</h2>
                     <hr class="light">
+                    <h2 class="section-heading"><span runat="server" id="orgCount"></span> orgasms counted, and more to come.. </h2>
+                    <hr class="light">
                     <p class="text-faded">Ever wanted to know the average number of times you've had sex in the last month? Want to know how long between times? How many orgasms you have by yourself, and how many with a partener? If you put in the data, we'll give you the details!</p>
                     <p>
                         No strings attached, no costs, and completely anonymous. You can keep you data 100% private to yourself, or combine your statistics with the world.
@@ -134,7 +136,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Sign up now and start collecting data</h2>
-                <a href="#contact" style="margin: 20px;" class="btn btn-default btn-xl wow tada">Sign up now!</a>
+                <a href="#contact" style="margin: 20px;" class="btn btn-default btn-xl wow tada page-scroll">Sign up now!</a>
                 <button type="button" data-toggle="modal" data-target="#myModal" style="margin: 20px;" class="btn btn-primary btn-xl wow tada">Logon</button>
             </div>
         </div>
@@ -206,21 +208,49 @@
             </form>
         </div>
     </section>
-<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Logon</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="LogonForm" method="post">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="LogonEmail">Email address</label>:
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" required="required" id="LogonEmail" name="LogonEmail" placeholder="Email address" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="LogonPassword">Password</label>:
+                            </div>
+                            <div class="col-md-6">
+                                <input type="password" required="required" id="LogonPassword" name="LogonPassword" placeholder="Password" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="LogonPassword">Stay Logged In</label>:
+                            </div>
+                            <div class="col-md-6">
+                                <input type="checkbox" id="Persist" name="Persist" value="1" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Logon</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 </asp:Content>
