@@ -135,7 +135,7 @@
             <div class="call-to-action">
                 <h2>Sign up now and start collecting data</h2>
                 <a href="#contact" style="margin: 20px;" class="btn btn-default btn-xl wow tada">Sign up now!</a>
-                <button type="button" data-toggle="modal" data-target="#myModal" style="margin: 20px;" class="btn btn-default btn-xl wow tada">Logon</button>
+                <button type="button" data-toggle="modal" data-target="#myModal" style="margin: 20px;" class="btn btn-primary btn-xl wow tada">Logon</button>
             </div>
         </div>
     </aside>
@@ -206,7 +206,7 @@
             </form>
         </div>
     </section>
-<div class="modal fade" tabindex="-1" role="dialog">
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
