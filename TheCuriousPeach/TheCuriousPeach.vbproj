@@ -195,6 +195,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="App_Code\Common.vb" />
     <Compile Include="peach\default.aspx.designer.vb">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>

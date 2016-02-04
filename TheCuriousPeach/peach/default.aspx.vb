@@ -7,6 +7,7 @@
 
         If Not IsNothing(Request("Logoff")) Then
             If Request("Logoff") = "1" Then
+                Common.LogActivity(CInt(Session("ID")), "Log off")
                 FormsAuthentication.SignOut()
                 Response.Redirect("/default.aspx")
             End If
