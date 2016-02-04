@@ -156,41 +156,49 @@
                     <div class="row">
                         <div id="ResultBox" runat="server"></div>
                         <div class="col-sm-3 col-sm-offset-2">
-                            <label class="control-label" for="Email">Email address:</label>
+                            <label style="margin-top: 10px;" class="control-label" for="Email">Email address:</label>
                         </div>
                         <div class="col-sm-6">
                             <input placeholder="Email address" title="Enter your email address" required="required" name="Email" id="Email" type="email" class="form-control" style="margin-top: 10px;" />
                         </div>
+</div>
+<div class="row">
                         <div class="col-sm-3 col-sm-offset-2">
-                            <label class="control-label" for="Password1">Password:</label>
+                            <label style="margin-top: 10px;" class="control-label" for="Password1">Password:</label>
                         </div>
+
                         <div class="col-sm-6">
                             <input placeholder="Password" title="Enter a password" required="required" name="Password1" id="Password1" type="password" class="form-control" style="margin-top: 10px;" />
                         </div>
+</div>
+<div class="row">
                         <div class="col-sm-3 col-sm-offset-2">
-                            <label class="control-label" for="Password2">Verify Password:</label>
+                            <label style="margin-top: 10px;" class="control-label" for="Password2">Verify Password:</label>
                         </div>
                         <div class="col-sm-6">
                             <input placeholder="Password" title="Enter your password again" required="required" name="Password2" id="Password2" type="password" class="form-control" style="margin-top: 10px;" />
                         </div>
-
+</div>
+<div class="row">
                         <div class="col-sm-3 col-sm-offset-2">
-                            <label class="control-label" for="Gender">Gender:</label>
+                            <label style="margin-top: 10px;" class="control-label" for="Gender">Gender:</label>
                         </div>
                         <div class="col-sm-6" style="text-align: center;">
-                            <input title="You must select a gender" required="required" style="margin-top: 10px;" type="radio" id="GenderM" name="Gender" value="M" />
+                            <input title="You must select a gender" required="required" style="margin-top: 15px;" type="radio" id="GenderM" name="Gender" value="M" />
                             Male
-                        <input title="You must select a gender" required="required" type="radio" id="GenderF" name="Gender" value="F" style="margin-top: 10px; margin-left: 50px;" />
+                        <input title="You must select a gender" required="required" type="radio" id="GenderF" name="Gender" value="F" style="margin-top: 15px; margin-left: 50px;" />
                             Female
                         </div>
+</div>
+<div class="row">
                         <div class="col-sm-3 col-sm-offset-2">
-                            <label class="control-label" for="Email">Date of Birth:</label>
+                            <label style="margin-top: 10px;" class="control-label" for="Email">Date of Birth:</label>
                         </div>
                         <div class="col-sm-6">
                             <input title="Enter your date of birth" required="required" id="DOB" name="DOB" type="date" class="form-control" style="margin-top: 10px;" />
                         </div>
                     </div>
-
+</div>
                     <div class="row">
                         <div class="col-sm-9 col-sm-offset-2">
                             <p style="margin-top: 25px;">
@@ -219,26 +227,26 @@
                     <form id="LogonForm" method="post">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="LogonEmail">Email address</label>:
+                                <label style="margin-top: 10px;" class="control-label" for="LogonEmail">Email address</label>:
                             </div>
-                            <div class="col-md-6">
-                                <input type="email" required="required" id="LogonEmail" name="LogonEmail" placeholder="Email address" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="LogonPassword">Password</label>:
-                            </div>
-                            <div class="col-md-6">
-                                <input type="password" required="required" id="LogonPassword" name="LogonPassword" placeholder="Password" />
+                            <div class="col-md-8">
+                                <input class="form-control" style="margin-top: 10px;" type="email" required="required" id="LogonEmail" name="LogonEmail" placeholder="Email address" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="LogonPassword">Stay Logged In</label>:
+                                <label style="margin-top: 10px;" class="control-label" for="LogonPassword">Password</label>:
                             </div>
-                            <div class="col-md-6">
-                                <input type="checkbox" id="Persist" name="Persist" value="1" />
+                            <div class="col-md-8">
+                                <input class="form-control" style="margin-top: 10px;" type="password" required="required" id="LogonPassword" name="LogonPassword" placeholder="Password" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label style="margin-top: 10px;" class="control-label" for="LogonPassword">Stay Logged In</label>:
+                            </div>
+                            <div class="col-md-8">
+                                <input style="margin-top: 15px;" type="checkbox" id="Persist" name="Persist" value="1" />
                             </div>
                         </div>
                         <div class="modal-footer">
