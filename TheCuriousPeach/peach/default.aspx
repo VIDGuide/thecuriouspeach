@@ -10,22 +10,24 @@
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard <small>Statistics Overview</small>
+                    <a class="pull-right btn btn-primary btn-lg" href="NewEntry.aspx"><i class="fa fa-pencil"></i> New Entry</a>
+                    <h1 style="    margin-top: 5px;" class="page-header">Dashboard <small>Statistics Overview</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
-                            <i class="fa fa-dashboard"></i>Dashboard
+                            <i class="fa fa-dashboard"></i> Your sex life: At a glance
                         </li>
                     </ol>
+                    
                 </div>
             </div>
             <!-- /.row -->
 
-            <div class="row">
+            <div class="row" runat="server" id="WelcomeBox">
                 <div class="col-lg-12">
                     <div class="alert alert-info alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <i class="fa fa-info-circle"></i><strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
+                        <i class="fa fa-info-circle"></i> <strong>New here?</strong> The dashboard below shows your sex-life statistics as you start entering data. Input some records to start seeing it take shape!
                     </div>
                 </div>
             </div>
@@ -37,11 +39,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
+                                    <i class="fa fa-star fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div class="huge"><span runat="server" id="TotalOCount"></span></div>
+                                    <div>Total Orgasms!</div>
                                 </div>
                             </div>
                         </div>
@@ -59,11 +61,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
+                                    <i class="fa fa-plus fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
+                                    <div class="huge"><span runat="server" id="SexCountSpan"></span></div>
+                                    <div>Sex Events!</div>
                                 </div>
                             </div>
                         </div>
@@ -81,11 +83,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                    <i class="fa fa-bar-chart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
+                                    <div class="huge"><span runat="server" id="MastCountSpan"></span></div>
+                                    <div>Masturbations!</div>
                                 </div>
                             </div>
                         </div>
@@ -103,11 +105,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
+                                    <i class="fa fa-globe fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
+                                    <div class="huge"><span runat="server" id="AvgO"></span></div>
+                                    <div>Global Average Orgasms!</div>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +129,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>Area Chart</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Orgasms/Day - Last 30 days</h3>
                         </div>
                         <div class="panel-body">
                             <div id="morris-area-chart"></div>
@@ -141,7 +143,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i>Donut Chart</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Orgasms By Type</h3>
                         </div>
                         <div class="panel-body">
                             <div id="morris-donut-chart"></div>
@@ -154,45 +156,45 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i>Tasks Panel</h3>
+                            <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i>Statistics</h3>
                         </div>
                         <div class="panel-body">
                             <div class="list-group">
                                 <a href="#" class="list-group-item">
-                                    <span class="badge">just now</span>
-                                    <i class="fa fa-fw fa-calendar"></i>Calendar updated
+                                    <span class="badge">12:00 - 1:00</span>
+                                    <i class="fa fa-fw fa-calendar"></i> Most common hour to masturbate:
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <span class="badge">4 minutes ago</span>
-                                    <i class="fa fa-fw fa-comment"></i>Commented on a post
+                                    <span class="badge">14:00 - 15:00</span>
+                                    <i class="fa fa-fw fa-comment"></i> Most common hour for sex:
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <span class="badge">23 minutes ago</span>
-                                    <i class="fa fa-fw fa-truck"></i>Order 392 shipped
+                                    <span class="badge">3.25</span>
+                                    <i class="fa fa-fw fa-truck"></i> Average orgasms per masturbation session:
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <span class="badge">46 minutes ago</span>
-                                    <i class="fa fa-fw fa-money"></i>Invoice 653 has been paid
+                                    <span class="badge">1.25</span>
+                                    <i class="fa fa-fw fa-money"></i> Average orgasms per sex session:
                                 </a>
                                 <a href="#" class="list-group-item">
                                     <span class="badge">1 hour ago</span>
-                                    <i class="fa fa-fw fa-user"></i>A new user has been added
+                                    <i class="fa fa-fw fa-user"></i> A new user has been added
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <span class="badge">2 hours ago</span>
-                                    <i class="fa fa-fw fa-check"></i>Completed task: "pick up dry cleaning"
+                                    <span class="badge">3 days</span>
+                                    <i class="fa fa-fw fa-check"></i> Longest time between orgasms:
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <span class="badge">yesterday</span>
-                                    <i class="fa fa-fw fa-globe"></i>Saved the world
+                                    <span class="badge">1</span>
+                                    <i class="fa fa-fw fa-globe"></i> Most sessions in 1 day:
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <span class="badge">two days ago</span>
-                                    <i class="fa fa-fw fa-check"></i>Completed task: "fix error on sales page"
+                                    <span class="badge">5</span>
+                                    <i class="fa fa-fw fa-check"></i> Most Orgasms in 1 session:
                                 </a>
                             </div>
                             <div class="text-right">
-                                <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="#">View All Statistics <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -200,73 +202,82 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>Transactions Panel</h3>
+                            <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Last 8 Recorded Events</h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Order #</th>
-                                            <th>Order Date</th>
-                                            <th>Order Time</th>
-                                            <th>Amount (USD)</th>
+                                            <th>Date</th>
+                                            <th>Time Start</th>
+                                            <th>Session Duration</th>
+                                            <th>Type</th>
+                                            <th>Orgasms</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>3326</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:29 PM</td>
-                                            <td>$321.33</td>
+                                            <td>5/11/2015</td>
+                                            <td>00:31:13</td>
+                                            <td>0:00</td>
+                                            <td>Masturbation</td>
+                                            <td>5</td>
                                         </tr>
                                         <tr>
-                                            <td>3325</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:20 PM</td>
-                                            <td>$234.34</td>
+                                            <td>6/11/2015</td>
+                                            <td>00:35:13</td>
+                                            <td>0:00</td>
+                                            <td>Masturbation</td>
+                                            <td>2</td>
                                         </tr>
                                         <tr>
-                                            <td>3324</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:03 PM</td>
-                                            <td>$724.17</td>
+                                            <td>7/11/2015</td>
+                                            <td>21:00:58</td>
+                                            <td>0:00</td>
+                                            <td>Masturbation</td>
+                                            <td>3</td>
                                         </tr>
                                         <tr>
-                                            <td>3323</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:00 PM</td>
-                                            <td>$23.71</td>
+                                            <td>8/11/2015</td>
+                                            <td>20:28:43</td>
+                                            <td>0:00</td>
+                                            <td>Masturbation</td>
+                                            <td>3</td>
                                         </tr>
                                         <tr>
-                                            <td>3322</td>
-                                            <td>10/21/2013</td>
-                                            <td>2:49 PM</td>
-                                            <td>$8345.23</td>
+                                            <td>11/11/2015</td>
+                                            <td>23:48:46</td>
+                                            <td>0:00</td>
+                                            <td>Masturbation</td>
+                                            <td>2</td>
                                         </tr>
                                         <tr>
-                                            <td>3321</td>
-                                            <td>10/21/2013</td>
-                                            <td>2:23 PM</td>
-                                            <td>$245.12</td>
+                                            <td>14/11/2015</td>
+                                            <td>20:14:56</td>
+                                            <td>0:00</td>
+                                            <td>Masturbation</td>
+                                            <td>3</td>
                                         </tr>
                                         <tr>
-                                            <td>3320</td>
-                                            <td>10/21/2013</td>
-                                            <td>2:15 PM</td>
-                                            <td>$5663.54</td>
+                                            <td>16/11/2015</td>
+                                            <td>23:26:19</td>
+                                            <td>0:00</td>
+                                            <td>Sex</td>
+                                            <td>1</td>
                                         </tr>
                                         <tr>
-                                            <td>3319</td>
-                                            <td>10/21/2013</td>
-                                            <td>2:13 PM</td>
-                                            <td>$943.45</td>
+                                            <td>17/11/2015</td>
+                                            <td>00:59:42</td>
+                                            <td>0:00</td>
+                                            <td>Masturbation</td>
+                                            <td>3</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="text-right">
-                                <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="#">View More Events <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

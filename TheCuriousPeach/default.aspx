@@ -23,7 +23,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Statistics, graphs and analytics!</h2>
                     <hr class="light">
-                    <h2 class="section-heading"><span runat="server" id="orgCount"></span> orgasms counted, and more to come.. </h2>
+                    <h2 class="section-heading"><span runat="server" id="orgCount"></span>orgasms counted, and more to come.. </h2>
                     <hr class="light">
                     <p class="text-faded">Ever wanted to know the average number of times you've had sex in the last month? Want to know how long between times? How many orgasms you have by yourself, and how many with a partener? If you put in the data, we'll give you the details!</p>
                     <p>
@@ -154,32 +154,37 @@
             <form action="default.aspx#contact" method="post">
                 <div class="form-group" style="margin-top: 25px;">
                     <div class="row">
-                        <div id="ResultBox" runat="server"></div>
+                        <div class="col-md-9 col-md-offset-2">
+                            <div style="padding: 25px;" id="ResultBox" runat="server"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+
                         <div class="col-sm-3 col-sm-offset-2">
                             <label style="margin-top: 10px;" class="control-label" for="Email">Email address:</label>
                         </div>
                         <div class="col-sm-6">
                             <input placeholder="Email address" title="Enter your email address" required="required" name="Email" id="Email" type="email" class="form-control" style="margin-top: 10px;" />
                         </div>
-</div>
-<div class="row">
+                    </div>
+                    <div class="row">
                         <div class="col-sm-3 col-sm-offset-2">
                             <label style="margin-top: 10px;" class="control-label" for="Password1">Password:</label>
                         </div>
 
                         <div class="col-sm-6">
-                            <input placeholder="Password" title="Enter a password" required="required" name="Password1" id="Password1" type="password" class="form-control" style="margin-top: 10px;" />
+                            <input pattern=".{6,}" placeholder="Password" title="Enter a password, minimum 6 characters." required="required" name="Password1" id="Password1" type="password" class="form-control" style="margin-top: 10px;" />
                         </div>
-</div>
-<div class="row">
+                    </div>
+                    <div class="row">
                         <div class="col-sm-3 col-sm-offset-2">
                             <label style="margin-top: 10px;" class="control-label" for="Password2">Verify Password:</label>
                         </div>
                         <div class="col-sm-6">
-                            <input placeholder="Password" title="Enter your password again" required="required" name="Password2" id="Password2" type="password" class="form-control" style="margin-top: 10px;" />
+                            <input pattern=".{6,}" placeholder="Password" title="Enter your password again, minimum 6 characters." required="required" name="Password2" id="Password2" type="password" class="form-control" style="margin-top: 10px;" />
                         </div>
-</div>
-<div class="row">
+                    </div>
+                    <div class="row">
                         <div class="col-sm-3 col-sm-offset-2">
                             <label style="margin-top: 10px;" class="control-label" for="Gender">Gender:</label>
                         </div>
@@ -189,8 +194,8 @@
                         <input title="You must select a gender" required="required" type="radio" id="GenderF" name="Gender" value="F" style="margin-top: 15px; margin-left: 50px;" />
                             Female
                         </div>
-</div>
-<div class="row">
+                    </div>
+                    <div class="row">
                         <div class="col-sm-3 col-sm-offset-2">
                             <label style="margin-top: 10px;" class="control-label" for="Email">Date of Birth:</label>
                         </div>
@@ -198,7 +203,6 @@
                             <input title="Enter your date of birth" required="required" id="DOB" name="DOB" type="date" class="form-control" style="margin-top: 10px;" />
                         </div>
                     </div>
-</div>
                     <div class="row">
                         <div class="col-sm-9 col-sm-offset-2">
                             <p style="margin-top: 25px;">
@@ -212,6 +216,7 @@
                             <button style="margin: 20px;" class="btn btn-default btn-xl wow tada pull-right" type="submit">Sign Up</button>
                         </div>
                     </div>
+
                 </div>
             </form>
         </div>

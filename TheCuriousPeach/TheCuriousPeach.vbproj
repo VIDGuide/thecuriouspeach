@@ -148,15 +148,18 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="My Project\PublishProfiles\IIS.pubxml" />
     <Content Include="peach\default.aspx" />
+    <Content Include="peach\NewEntry.aspx" />
     <Content Include="peach\Peach.Master" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="img\header.jpg" />
     <Content Include="img\portfolio\1.jpg" />
     <Content Include="img\portfolio\2.jpg" />
     <Content Include="img\portfolio\3.jpg" />
+    <Content Include="peach\UserProfile.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\creative.js" />
+    <Content Include="Scripts\Stopwatch.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.easing.min.js" />
@@ -166,6 +169,8 @@
     <Content Include="Scripts\morris.min.js" />
     <Content Include="Scripts\raphael.min.js" />
     <Content Include="Scripts\wow.min.js" />
+    <Content Include="peach\Settings.aspx" />
+    <Content Include="TextFile1.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +208,13 @@
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="peach\NewEntry.aspx.designer.vb">
+      <DependentUpon>NewEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="peach\NewEntry.aspx.vb">
+      <DependentUpon>NewEntry.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="peach\Peach.Master.designer.vb">
       <DependentUpon>Peach.Master</DependentUpon>
     </Compile>
@@ -210,12 +222,26 @@
       <DependentUpon>Peach.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="peach\UserProfile.aspx.designer.vb">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="peach\UserProfile.aspx.vb">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="PublicMaster.Master.designer.vb">
       <DependentUpon>PublicMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="PublicMaster.Master.vb">
       <DependentUpon>PublicMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="peach\Settings.aspx.designer.vb">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="peach\Settings.aspx.vb">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

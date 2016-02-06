@@ -4,8 +4,6 @@ Public Class _default
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'todo: add validation for password complexity, and match
-        'todo: add logon modal/popup/redirect
         If Not Request("LogonEmail") Is Nothing Then LogonUser()
         If Not Request("Password1") Is Nothing Then Register()
 
@@ -141,55 +139,58 @@ Public Class _default
         If Not Request("Password1") Is Nothing Then
             If Not Request("Password2") Is Nothing Then
                 If Request("Password1") = Request("Password2") Then
-                    'todo: check password complexity
-                    If Not Request("Email") Is Nothing Then
-                        If Not Request("Gender") Is Nothing Then
-                            If Not Request("DOB") Is Nothing Then
-                                Using conn As New SqlConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings("DB").ConnectionString.ToString),
+                    If Request("Password1").Length > 5 Then
+                        If Not Request("Email") Is Nothing Then
+                            If Not Request("Gender") Is Nothing Then
+                                If Not Request("DOB") Is Nothing Then
+                                    Using conn As New SqlConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings("DB").ConnectionString.ToString),
                    cmd As New SqlCommand("CheckUnique", conn)
-                                    cmd.CommandType = Data.CommandType.StoredProcedure
-                                    cmd.Parameters.AddWithValue("@Email", Request("Email").ToString)
-                                    Try
-                                        conn.Open()
-                                        Using reader As SqlDataReader = cmd.ExecuteReader()
-                                            If reader.HasRows Then
-                                                reader.Read()
-                                                If CInt(reader("CNT")) = 0 Then
-                                                    OkToSave = True
-                                                Else
-                                                    ResultBox.Attributes.Add("class", "bg-danger text-danger")
-                                                    ResultBox.InnerHtml = "Email address already in use. Please try again."
+                                        cmd.CommandType = Data.CommandType.StoredProcedure
+                                        cmd.Parameters.AddWithValue("@Email", Request("Email").ToString)
+                                        Try
+                                            conn.Open()
+                                            Using reader As SqlDataReader = cmd.ExecuteReader()
+                                                If reader.HasRows Then
+                                                    reader.Read()
+                                                    If CInt(reader("CNT")) = 0 Then
+                                                        OkToSave = True
+                                                    Else
+                                                        ResultBox.Attributes.Add("class", "bg-danger text-danger")
+                                                        ResultBox.InnerHtml = "<p>Email address already in use. Please try again.</p>"
+                                                    End If
                                                 End If
-                                            End If
-                                        End Using
-                                    Catch ex As Exception
-                                    End Try
-                                End Using
+                                            End Using
+                                        Catch ex As Exception
+                                        End Try
+                                    End Using
+                                Else
+                                    ResultBox.Attributes.Add("class", "bg-danger text-danger")
+                                    ResultBox.InnerHtml = "<p>Date of Birth not specified. Please try again.</p>"
+                                End If
                             Else
                                 ResultBox.Attributes.Add("class", "bg-danger text-danger")
-                                ResultBox.InnerHtml = "Date of Birth not specified. Please try again."
+                                ResultBox.InnerHtml = "<p>Gender not specified. Please try again.</p>"
                             End If
                         Else
                             ResultBox.Attributes.Add("class", "bg-danger text-danger")
-                            ResultBox.InnerHtml = "Gender not specified. Please try again."
+                            ResultBox.InnerHtml = "<p>Email address not specified. Please try again.</p>"
                         End If
                     Else
                         ResultBox.Attributes.Add("class", "bg-danger text-danger")
-                        ResultBox.InnerHtml = "Email address not specified. Please try again."
+                        ResultBox.InnerHtml = "<p>Password does not meet minimum length requirements.</p>"
                     End If
                 Else
                     ResultBox.Attributes.Add("class", "bg-danger text-danger")
-                    ResultBox.InnerHtml = "Passwords do not match. Please try again."
+                    ResultBox.InnerHtml = "<p>Passwords do not match. Please try again.</p>"
                 End If
             Else
                 ResultBox.Attributes.Add("class", "bg-danger text-danger")
-                ResultBox.InnerHtml = "Password Repeat not specified. Please try again."
+                ResultBox.InnerHtml = "<p>Password Repeat not specified. Please try again.</p>"
             End If
         Else
             ResultBox.Attributes.Add("class", "bg-danger text-danger")
-            ResultBox.InnerHtml = "Password not specified. Please try again."
+            ResultBox.InnerHtml = "<p>Password not specified. Please try again.</p>"
         End If
-        'todo: add better CSS/Styling to error dialog/popup
         If OkToSave Then
             Using conn As New SqlConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings("DB").ConnectionString.ToString),
                    cmd As New SqlCommand("RegisterUser", conn)

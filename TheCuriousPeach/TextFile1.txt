@@ -1,0 +1,52 @@
+﻿
+-> New Entry
+	-> Done: Date, Start Time, Finish Time (timer button to start live)
+	-> Done: Event Type: Sex/Mast
+	-> todo: Custom Keywords
+	-> Add Porn (Mental Stimulation: pre-set list with porn, erotica literature, imagination)
+	-> Add Toys
+	-> Add Partners
+	-> Add Location (pre-set list, plus custom)
+	-> Add Orgasms (as many as required )
+			-> Tag to event
+			-> Intensity x/10
+			-> Custom Keywords, pre-set keywords
+			-> Add Toys
+
+	Tags have drop-down list, and a text field to enter tags/keywords as required. Tags can be saved to custom DB and used later on drop-down for future re-use
+
+
+	-> Can form tag clouds from these keywords
+
+-> Dashboard Overview:
+	-> Num Orgasms
+		-> View More: Browsable history of all events (Events.aspx?Type=Orgasms)
+	-> Num Sex
+		-> View More: Browsable history of all events (Events.aspx?Type=Sex)
+	-> Num Mast
+		-> View More: Browsable history of all events (Events.aspx?Type=Mast)
+	-> Avg O/User
+		-> Global Stats (Global.aspx)
+
+-> Graph of last 30 days of O's - Total, Sex, mast
+	-> Modifiable date range (graphs.aspx)
+
+-> Donut: O Breakdown: sex/mast - all time
+	-> some kind of more stats/graphs, advanced graphs/stats (advanced.aspx?)
+
+-> Box of 8 Statistics
+
+-> Last 8 events
+	-> View More: Browsable history of all events (Events.aspx)
+
+
+
+	-> Age group data, gender data
+
+
+--> Settings
+	Site settings options: Can set masturbation default over sex, for example
+	View/Change custom tags that have been saved
+--> Profile
+	Ability to edit profile data, change password
+	Include extra optional data about the person, including photo, country of origin, etc.

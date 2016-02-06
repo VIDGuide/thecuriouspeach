@@ -8,7 +8,6 @@ Public Class Site2
     End Sub
 
     Public Sub UpdateUser(Username As String)
-        Useremail.InnerText = Username
         UserDetail2.InnerText = Username
 
         If IsNothing(Session("ID")) Then
